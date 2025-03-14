@@ -19,7 +19,7 @@ h3 {
 }
 
 header h1.indent {
-  text-indent: 30px;
+  text-indent: 300em;
   font-size: 170%;
 }
 
@@ -29,3 +29,14 @@ header h3.indent {
 }
 
 header img { float: left; }
+
+
+
+
+
+
+
+
+
+
+
