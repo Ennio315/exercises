@@ -3,4 +3,4 @@ body {
   font-size:100%;
 }
 
-a:hover, a:focus { color: black; }
+a:link, a:hover, a:focus { color: 800,000; }
