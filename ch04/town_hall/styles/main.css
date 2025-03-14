@@ -17,3 +17,15 @@ h2 {
 h3 { 
   font-size: 105%;
 }
+
+header h1.indent {
+  text-indent: 3em;
+  font-size: 170%;
+}
+
+header h3.indent {
+  text-indent: 3em;
+  font-size: 130%;
+}
+
+header img { float: left; }
