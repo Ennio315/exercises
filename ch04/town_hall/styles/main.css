@@ -18,13 +18,13 @@ body {
     font-size: 105%;
   }
   
-  header h1.indent {
-    text-indent: 3em;
+  header h1 {
+    text-indent: 30px;
     font-size: 170%;
   }
   
-  header h3.indent {
-    text-indent: 3em;
+  header h3 {
+    text-indent: 30px;
     font-size: 130%;
   }
   
