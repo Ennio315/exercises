@@ -1,4 +1,17 @@
 /* custom property */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1 h2 h3 ul p { padding: .5em 0;}
+
+ul { padding-left: 2em;}
+
+
+
 :root {
 	--accent-color: #800000;  /* could also be coded #800 */
 }
