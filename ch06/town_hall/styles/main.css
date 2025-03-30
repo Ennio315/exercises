@@ -14,17 +14,19 @@
 /* default styles */
 body {
 	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
+    font-size: calc(90%+.2vw);
 	width: 80%;
+	max-width: 1024px;
 	margin: auto;
 	border: 2px solid var(--accent-color);
+	line-height: 1.5;
 }
 a:hover, a:focus{
 	font-style: italic;
 	color: var(--accent-color);
 }
 h1, h2, h3, p, ul {
-	padding: .5em 0;
+	padding: .25em 0;
 }
 h1 {
 	font-size: 150%;
@@ -45,7 +47,8 @@ header {
 	border-bottom: 2px solid var(--accent-color);
 	background-image: linear-gradient(
 	    30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%);
-	& h2 {
+	line-height: 1.2;
+		& h2 {
 		font-size: 175%;
 		padding: .5em 0 0 0;
 	}
@@ -57,25 +60,102 @@ header {
 	& img {
 		float: left;
 		margin: .75em 1em;
+		width: clamp(40px, 100%, 80px);
 	}
 }
 
 /* the styles for the main content */
 main {
-	padding: 0 1em 1em;
-	& h1 {
-		border-top: 2px solid var(--accent-color);
-		border-bottom: 2px solid var(--accent-color);
-	}
+	padding: 0 1em;
+	display: flex;
+	
 	& blockquote {
 		font-style: italic;
-		padding-left: 1em;
+		padding-left: 2em;
+		padding-right: 2em;
+		margin-bottom: 1em;
 	}
 	& img {
 		border: 4px double var(--accent-color);
 		border-radius: 10px;
 	}
+
+	& h3 {
+		margin-top: 0;
+	}
 }
+
+aside {
+	box-sizing: border-box;
+	flex-basis: 25%;
+	margin-right: 0;
+	
+	& h3 { 
+		margin: 0px;
+		padding: 0px;
+	 }
+
+	& img { 
+		margin-top: .25em; 
+		margin-bottom: .25em;
+		width: clamp(40px, 100%, 75px);
+		
+	}
+}
+
+section {
+	box-sizing: border-box;
+	flex-basis: 75%;
+	margin-left: 1em;
+
+	& h1 {
+		border-bottom:  2px solid var(--accent-color);
+		padding-bottom: 0;
+	}
+
+	& :first-child {
+		padding-bottom: 0;
+	}
+
+	& h2 {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	#topline {
+		border-top: 2px solid var(--accent-color);
+	}
+
+	& p {
+		margin-top: 0;
+		padding-bottom: 1em;
+	}
+
+	& h3 { 
+		margin-bottom: 0;
+	    padding-bottom: 0;
+	}
+	& img {
+		float: right;
+		margin: 1em;
+		border: 2px solid black;
+		width: clamp(100px, 100%, 250px);
+		
+	}
+
+}
+
+
+
+article {
+	& p {
+		padding-bottom: 0;
+	}
+
+	& p:last-child { margin-bottom: 1em;}
+}
+
+li {margin-bottom: .25em;}
 
 /* the styles for the footer */
 footer {
@@ -89,5 +169,21 @@ footer {
 
 /* CSS class */
 .large {
-	font-size: 125%;
+		font-size: 125%;
+}
+
+/* <section> class */
+.speaker {
+	& h1 {
+		color: var(--accent-color);
+		border-bottom: 0;
+	}
+
+	& h2 {
+		color: black;
+	}
+
+	& p { 
+		padding: .25em 0;
+	}
 }
