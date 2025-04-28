@@ -91,6 +91,14 @@ section {
 		float: right;
 		margin: 0 1em .25em;
 	}
+	& ul.star { 
+		padding-left: 1em;
+		margin-left: 0;
+		list-style-image: url("../images/star.png"); 
+		& li {
+			padding-left: .25em;
+		}
+	}
 }
 
 /* the styles for the aside */
