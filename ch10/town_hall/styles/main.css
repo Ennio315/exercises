@@ -53,6 +53,7 @@ header {
 	background-image: linear-gradient(
 	    30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%);
 	& h2 {
+		font-family: 'Ravie';
 		font-size: 175%;
 		padding: .5em 0 0 0;
 	}
@@ -87,9 +88,18 @@ section {
 	padding-left: .5em;
 	border-bottom: 8px double var(--accent-color);
 	& img {
-		width: clamp(100px, 50%, 250px);
+		width: clamp(100px, 100%, 250px);
+		
+	}
+	/* figure and figcaption */
+
+	& article figure {
 		float: right;
 		margin: 0 1em .25em;
+		& figcaption {
+			font-weight: bold;
+			border-bottom: 3px solid black;
+		}
 	}
 }
 
@@ -201,6 +211,13 @@ footer {
 .submenu:hover > .dropdown {
 	display: block;
 }
+
+/* font face */
+@font-face {
+	font-family: Ravie;
+	src: url(RAVIE.TTF);
+}
+
 
 /* media queries */
 @media only screen and (min-width: 922px) {
