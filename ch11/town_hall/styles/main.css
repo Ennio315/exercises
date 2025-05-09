@@ -205,6 +205,44 @@ footer {
 	& > li a { margin: 2px; }
 }
 
+/* Table Border */
+table {
+	border-collapse: collapse;
+	width: 80% ;
+}
+
+.row-marker {
+	border-top: 3px solid var(--accent-color);
+	border-bottom: 3px solid var(--accent-color);
+}
+
+.top-border {
+	border-top: 3px solid var(--accent-color);
+}
+
+.right {
+	text-align: right;
+}
+
+.center {
+	vertical-align: center;
+}
+
+td {
+	padding: .25em 0 .25em 0;
+	text-align: left;
+}
+
+tr th {
+	text-align: left;
+}
+
+figcaption {
+	color: var(--accent-color);
+	font-weight: bold;
+	margin-top: .5em;
+	font-size: larger;
+}
 
 /* media queries */
 @media only screen and (min-width: 922px) {
