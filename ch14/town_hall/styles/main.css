@@ -119,7 +119,7 @@ footer {
 		color: var(--accent-color);
 	}
 	& h2 {
-		color: black;
+		color: var(--accent-color);
 	}
 	& p {
 		padding: .5em 0; 
@@ -191,6 +191,7 @@ footer {
 }
 
 .submenu {
+	z-index: 1;
 	position: absolute;
 	top:0;
 	left: 100%;
@@ -199,6 +200,11 @@ footer {
 	color: var(--light_menu);
 	display: none;
 	& > li a { margin: 2px; }
+}
+
+video {
+	width: 90%;
+	
 }
 
 @media only screen and (min-width: 922px) {
