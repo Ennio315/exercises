@@ -17,6 +17,14 @@
 
 /* default styles */
 body {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas: 
+		"header"
+		"nav"
+		"main"
+		"footer";
 	font-family: Arial, Helvetica, sans-serif;
     font-size: calc(15px + .2vw);
 	width: min(80%, 1024px);
@@ -68,8 +76,13 @@ header {
 
 /* the styles for the main content */
 main {
-	display: flex;
-	flex-direction: column-reverse;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, auto);
+	grid-template-areas: 
+		"sec"
+		"asi";
+
 	padding: 0 1em 1em;
 	& blockquote {
 		font-style: italic;
@@ -84,6 +97,7 @@ main {
 
 /* the styles for the section */
 section {
+	grid-area: sec;
 	padding-left: .5em;
 	border-bottom: 8px double var(--accent-color);
 	& img {
@@ -95,6 +109,7 @@ section {
 
 /* the styles for the aside */
 aside {
+	grid-area: asi;
 	padding-right: .5em;
 }
 
@@ -209,34 +224,39 @@ video {
 
 @media only screen and (min-width: 922px) {
 	main {
-		flex-direction: row;
+		grid-template-rows: auto;
+		grid-template-columns: 25% 1fr;
+		grid-template-areas: 
+			"asi sec";
+
 	}
 	
 	section {
-		flex-basis: 75%;
+		grid-area: sec;
 		border-bottom: none;
 	}
 	
 	aside {
-		flex-basis: 25%;
+		grid-area: asi;
 	}
 }
 
 @media only screen and (min-width: 786px) {
 
 	.menu {
-		display: flex;
+		display: grid;
 		position: relative;
 		width: 100%;
 		& li { 
-			flex-basis: 20%; 
 			text-align: center;
 		}
+		grid-template: auto / repeat(5, auto);
+		
 	}
 		
 	.menu-btn { display: none; }
 
-	#checkbox-toggle:checked ~ .menu { display: flex; }
+	#checkbox-toggle:checked ~ .menu { display: grid; }
 
 	.menu li:has(.submenu) {
 		& small::after { content: "\25bc"; }  /* down triangle */
