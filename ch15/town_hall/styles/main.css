@@ -90,12 +90,27 @@ section {
 		width: clamp(100px, 50%, 250px);
 		float: right;
 		margin: 0 1em .25em;
+		
+		
 	}
+	
+
 }
 
 /* the styles for the aside */
 aside {
 	padding-right: .5em;
+	& img {
+		transition: 2s ease-in-out 1s;
+		filter: hue-rotate(60deg)
+	}
+
+	img:hover {
+		/* margin-left: 30px; */
+		transform: rotate(180deg);
+		transform-origin: right;
+	}
+
 }
 
 /* the styles for the footer */
@@ -114,7 +129,22 @@ footer {
 	border-bottom: 2px solid var(--accent-color);
 	padding: .5em 0 1em;
 }
+
+@keyframes  example { 
+		
+		
+		to {
+		-webkit-filter: brightness(100%);	
+		-webkit-filter: drop-shadow(0);		
+		filter: drop-shadow(10px);
+		filter: brightness(125%);
+		transform: scale(1.1);
+		}
+	}
+
+
 .speaker {
+	
 	& h1 {
 		color: var(--accent-color);
 	}
@@ -124,7 +154,16 @@ footer {
 	& p {
 		padding: .5em 0; 
 	}	
+	& img {
+			animation: example 2s ease-in-out infinite alternate;
+			
+	}
+	
 }
+
+
+
+	
 .large {
 	font-size: 125%;
 }
@@ -151,7 +190,7 @@ footer {
 	& a:link, a:visited { 
 		color: var(--light_menu);
 	}
-	& a:hover, a:focus, a.current {
+	& a:hover, a:focus {
 		background-color: var(--mid_menu);
 		color: var(--dark_menu);
 	}
@@ -159,6 +198,11 @@ footer {
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
+	}
+
+	& a:not([href]) {
+		background-color: var(--mid_menu);
+		color: var(--dark_menu);
 	}
 }
 
@@ -203,7 +247,35 @@ footer {
 
 
 /* media queries */
-@media only screen and (min-width: 922px) {
+ @media screen and (prefers-reduced-motion: reduce) {
+	
+	.speaker img {
+		 		  animation: none;
+				  transform: none;
+				  transition: none;
+			}
+	
+    aside img {
+				animation: none;
+				transform: none;
+				transition: none;
+				transform-origin: none;
+				filter: none;
+				
+	}
+	aside img:hover {
+		
+		transform: none;
+		transform-origin: none;
+	}
+	
+	
+} 
+
+
+
+
+@media only screen and (min-width: 922px ) {
 	main {
 		flex-direction: row;
 	}
